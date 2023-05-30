@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  grid-area: h;
+  height: 20vh;
+  background: rgb(35, 170, 125);
+}
+
+.navbar-brand img {
+  width: 5rem;
+  height: 5rem;
+  animation-duration: 2s;
+  animation-name: pulse;
+  animation-iteration-count: infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+/* Menu izquierdo */
+menu {
+  grid-area: n;
+  height: 10vh;
+  background-color: #fff;
+  font-family: "Raleway", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Galería productos */
+main {
+  background-image: url("../img/PapeldeEnvolver.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  grid-area: m;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "h h"
+    "n n"
+    "m m"
+    "f f";
+  grid-template-columns: 1fr 4fr;
+}
+
+.grid-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+.grid-gallery .box {
+  display: none;
+}
+
+.card h2 {
+  color: rgb(35, 170, 125);
+  font-family: "DynaPuff", cursive;
+  font-size: 15px;
+}
+
+.card p {
+  color: rgb(35, 170, 125);
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(35, 170, 125, 0.7);
+  border-radius: 10px;
+  text-align: center;
+  width: 18rem;
+  bottom: 0;
+}
+
+.card img {
+  height: 12rem;
+  width: 12rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+  filter: grayscale(1);
+}
+
+.card img:hover {
+  transition: filter 1s ease;
+  filter: grayscale(0);
+}
+
+.card button {
+  background-color: rgb(30, 124, 90);
+  color: #fff;
+  border: none;
+  border-radius: 0px 0px 10px 10px;
+  height: 2rem;
+  width: 18rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.card button:hover {
+  background-color: #cdc3e6;
+  color: #fff;
+}
+
+.card button:focus {
+  background-color: #bec1bb;
+  color: #fff;
+}
+
+.pagination a {
+  color: rgb(30, 124, 90);
+}
+
+/* Footer */
+footer {
+  grid-area: f;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: rgb(30, 124, 90);
+}
+
+footer p,
+i {
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  font-size: 10px;
+  margin: 0;
+}
+
+.footer-text i {
+  color: rgb(233, 47, 47);
+}
+
+.footer-links {
+  justify-content: center;
+}
+
+.footer-links i {
+  font-size: 12px;
+}
+
+.footer-links i:hover {
+  color: rgb(75, 74, 74);
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: #fff;
+  padding-left: 1rem;
+}
+
+@media (min-width: 576px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "h n"
+      "h m"
+      "f m";
+    grid-template-columns: 1fr 6fr;
+  }
+
+  .grid-gallery .box {
+    display: inline;
+  }
+
+  header {
+    height: 90vh;
+  }
+
+  header .container-fluid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header .container-fluid .navbar-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item a {
+    color: #e4e4e4 !important;
+  }
+
+  .nav-item a:hover {
+    color: #fff !important;
+  }
+
+  main {
+    height: 90vh;
+    overflow-y: auto;
+  }
+
+  .product1 {
+    grid-area: p1;
+  }
+
+  .product2 {
+    grid-area: p2;
+  }
+
+  .product3 {
+    grid-area: p3;
+  }
+
+  .product4 {
+    grid-area: p4;
+  }
+
+  .product5 {
+    grid-area: p5;
+  }
+
+  .product6 {
+    grid-area: p6;
+  }
+
+  .grid-gallery {
+    display: grid;
+    grid-template-areas:
+      "p1 p2 p3"
+      "p4 p5 p6";
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  footer {
+    height: 10vh;
+  }
+}
